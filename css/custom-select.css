@@ -1,0 +1,91 @@
+.select {
+    position: relative;
+    width: 100%;
+}
+
+.select__toggle {
+    background-color: #fff;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    color: rgba(19, 39, 67, 0.5);
+    cursor: pointer;
+    align-items: center;
+    width: 100%;
+    padding: 20px 50px 20px 20px;
+    user-select: none;
+    font-size: 16px;
+    display: flex;
+    justify-content: start;
+    position: relative;
+}
+
+.select__toggle::after {
+    content: '';
+    background: url("../icon/arrow-02.svg") no-repeat;
+    position: absolute;
+    width: 14px;
+    height: 8px;
+    top: calc(50% - 4px);
+    right: 25px;
+    transition: 0.3s ease-in-out all;
+
+}
+
+.select__toggle:focus {
+    border-color: #ED4C5C;
+}
+
+.select_show .select__toggle::after {
+    transform: rotateX(180deg);
+}
+
+.select__dropdown {
+    display: none;
+    position: absolute;
+    color: rgba(19, 39, 67, 0.5);
+    font-size: 16px;
+    top: 65px;
+    left: 0;
+    right: 0;
+    border: 1px solid #333333;
+    overflow-y: auto;
+    border-radius: 6px;
+    z-index: 2;
+    background-color: #fff;
+}
+
+
+.select_show .select__dropdown {
+    display: block;
+}
+
+.select_show .select__backdrop {
+    display: block;
+}
+
+.select__options {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.select__option {
+    padding: 5px 20px;
+    transition: 0.3s ease-in-out all;
+}
+
+.select__option:hover {
+    padding-left: 30px;
+}
+
+.select__option_selected {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select__option:hover {
+    background-color: #ED4C5C;
+    color: #FFFFFF;
+    cursor: pointer;
+}
